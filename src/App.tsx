@@ -1,57 +1,58 @@
-import React, { useCallback } from 'react'
-import styled from 'styled-components'
-import { Button, Title } from '@gnosis.pm/safe-react-components'
-import { useSafeAppsSDK } from '@safe-global/safe-apps-react-sdk'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useSafeAppsSDK } from '@safe-global/safe-apps-react-sdk';
+import { useEffect, useState } from 'react';
 
-const Container = styled.div`
-  padding: 1rem;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
+//@ts-ignore
+import { DM3 } from 'dm3-react';
 
-const Link = styled.a`
-  margin-top: 8px;
-`
+function App() {
+    const { sdk, safe } = useSafeAppsSDK();
+    sdk.safe.getEnvironmentInfo();
 
-const SafeApp = (): React.ReactElement => {
-  const { sdk, safe } = useSafeAppsSDK()
+    useEffect(() => {
+        safe.owners.forEach((owner) => {
+            const ensName = `${owner}${process.env.REACT_APP_ADDR_ENS_SUBDOMAIN}`;
+            setOwnersEnsNames((ownersEnsNames) => [...ownersEnsNames, ensName]);
+        });
+    }, []);
 
-  const submitTx = useCallback(async () => {
-    try {
-      const { safeTxHash } = await sdk.txs.send({
-        txs: [
-          {
-            to: safe.safeAddress,
-            value: '0',
-            data: '0x',
-          },
-        ],
-      })
-      console.log({ safeTxHash })
-      const safeTx = await sdk.txs.getBySafeTxHash(safeTxHash)
-      console.log({ safeTx })
-    } catch (e) {
-      console.error(e)
-    }
-  }, [safe, sdk])
+    const [ownersEnsNames, setOwnersEnsNames] = useState<string[]>([]);
 
-  return (
-    <Container>
-      <Title size="md">Safe: {safe.safeAddress}</Title>
-
-      <Button size="lg" color="primary" onClick={submitTx}>
-        Click to send a test transaction
-      </Button>
-
-      <Link href="https://github.com/safe-global/safe-apps-sdk" target="_blank" rel="noreferrer">
-        Documentation
-      </Link>
-    </Container>
-  )
+    return (
+        <>
+            <DM3
+                defaultContacts={['help.dm3.eth', ...ownersEnsNames]}
+                defaultServiceUrl={process.env.REACT_APP_DEFAULT_SERVICE}
+                showAlways={true}
+                // connectionStateChange={(state: ConnectionState) =>
+                //     setShowLogo(state === ConnectionState.SignedIn)
+                // }
+            />
+            <div className="logo"></div>
+            <nav
+                className="navbar fixed-bottom navbar-light "
+                style={{ backgroundColor: '#000000ff !important' }}
+            >
+                <div className="container-fluid text-center ">
+                    <div className="w-100">
+                        <a
+                            className="text-muted legal"
+                            href="https://dm3.network/privacy-policy/"
+                        >
+                            Privacy Policy
+                        </a>
+                        <a
+                            className="text-muted legal ms-4"
+                            href="https://dm3.network/terms-and-conditions/"
+                        >
+                            Terms & Conditions
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </>
+    );
 }
 
-export default SafeApp
+export default App;
