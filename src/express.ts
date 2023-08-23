@@ -12,7 +12,8 @@ app.use(cors());
 
 
 // TODO Get rif if DO deployment is ready
-app.use(express.static(path.join(__dirname, './build')));
+console.log(__dirname)
+app.use(express.static(path.join(__dirname, '../build/')));
 const port = process.env.PORT || '8080';
 
 server.listen(port, () => console.log("Safe app started at port " + port));
