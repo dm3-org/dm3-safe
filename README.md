@@ -1,22 +1,16 @@
-# dm3-web
-## Getting Started
+# DM3-Safe
 
-### Build
+Use the DM3 message from within Safe.
 
-```
-cd ../../ && yarn build
-```
+## Installation
 
+To get started, follow these steps:
 
-### Usage
+1. Install the required dependencies using the following command:`yarn install`
 
+## Running the Application
 
-yarn: 
-```
-yarn start
-```
+Follow these steps to run the application:
 
-npm: 
-```
-yarn start
-```
+1. Create an environment file by copying the contents of `example.env` and configuring the necessary settings.
+2. Run the development server using the command: `yarn dev`
