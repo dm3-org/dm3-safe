@@ -11,9 +11,13 @@ const server = http.createServer(app);
 app.use(cors());
 
 
-// TODO Get rif if DO deployment is ready
+// TODO Get rid as soon as DO deployment is ready
 console.log(__dirname)
 app.use(express.static(path.join(__dirname, '../build/')));
 const port = process.env.PORT || '8080';
 
-server.listen(port, () => console.log("Safe app started at port " + port));
+server.listen(port, () => {
+    console.log("Safe app started ")
+    console.log(process.env)
+}
+);
