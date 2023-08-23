@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <DM3
-        defaultContacts={["stkux.eth", "help.dm3.eth", ...ownersEnsNames]}
+        defaultContacts={["help.dm3.eth", ...ownersEnsNames]}
         defaultServiceUrl={process.env.REACT_APP_DEFAULT_SERVICE}
         showAlways={true}
         // connectionStateChange={(state: ConnectionState) =>
