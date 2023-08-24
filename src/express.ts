@@ -19,5 +19,6 @@ const port = process.env.PORT || '8080';
 server.listen(port, () => {
     console.log("Safe app started ")
     console.log(process.env)
+    console.log(process.env)
 }
 );
