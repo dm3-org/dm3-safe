@@ -16,7 +16,7 @@
     "autoprefixer": "10.4.5",
     "bootstrap": "^5.1.3",
     "cors": "^2.8.5",
-    "dm3-react": "^0.2.10",
+    "dm3-react": "^0.2.11",
     "express": "^4.18.2",
     "http": "^0.0.1-security",
     "postcss": "^8.4.24",
