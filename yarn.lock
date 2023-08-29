@@ -5388,7 +5388,7 @@ dm3-lib-offchain-resolver-api@^0.2.4:
     dm3-lib-profile "^0.2.0"
     ethers "5.7.2"
 
-dm3-lib-profile@^0.2.0, dm3-lib-profile@^0.2.1:
+dm3-lib-profile@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/dm3-lib-profile/-/dm3-lib-profile-0.2.1.tgz#a271a5a7c37edf96a439bb22c2e26f534cced3cb"
   integrity sha512-YBnhmFleRuZd+HBAWwvktr7Uu5x8pduvL4mEIzpekmOLThrslCUT2Eht4ZaimIOkIAoaMhx9Qy09BFgY3H+ing==
@@ -5398,6 +5398,27 @@ dm3-lib-profile@^0.2.0, dm3-lib-profile@^0.2.1:
     axios "^0.25.0"
     dm3-lib-crypto "^0.2.0"
     dm3-lib-shared "^0.2.0"
+    ethers "5.7.2"
+    googleapis "^100.0.0"
+    libsodium-wrappers "^0.7.10"
+    query-string "^7.1.1"
+    safe-stable-stringify "^2.4.1"
+    socket.io "^4.4.1"
+    socket.io-client "^4.4.1"
+    uuid "^8.3.2"
+    web3.storage "^3.5.7"
+    whatwg-encoding "^2.0.0"
+
+dm3-lib-profile@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/dm3-lib-profile/-/dm3-lib-profile-0.2.2.tgz#63e2833847eebb54634f582b5b0b9693b8739c83"
+  integrity sha512-2H5VeLDQVjY7Q589pdMx/0ekVD7OVAvm4kjLUiLK7XDHNUGOcAhncKigplT5avpz4Yq6YX0f3DSidxIZPXC/Bg==
+  dependencies:
+    "@types/libsodium-wrappers" "^0.7.10"
+    ajv "^8.11.0"
+    axios "^0.25.0"
+    dm3-lib-crypto "^0.2.0"
+    dm3-lib-shared "^0.2.1"
     ethers "5.7.2"
     googleapis "^100.0.0"
     libsodium-wrappers "^0.7.10"
@@ -5431,10 +5452,10 @@ dm3-lib-storage@^0.2.0:
     ethers "5.7.2"
     libsodium-wrappers "^0.7.10"
 
-dm3-react@^0.2.11:
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/dm3-react/-/dm3-react-0.2.11.tgz#f69638bdd974b192afd1e03ddfb7f4b599cbb030"
-  integrity sha512-7JQI0UKs+61kZkusDK1PbrumVUVyd+3AAuPU1lgvzI3igC4TML1Z/wn9yPIB217B4u++Ye+i22mT0Xb7tT7fvg==
+dm3-react@^0.2.12:
+  version "0.2.12"
+  resolved "https://registry.yarnpkg.com/dm3-react/-/dm3-react-0.2.12.tgz#943f93a1094658a700898f975c64a95de966bd76"
+  integrity sha512-dkof3sReQrxZ76s5tcBPM/VCs6ObEE6o9nOy4usIYytnf2/O/kFBlQVeg9fhSgXcYdfjri2jUjp51BKp9C23cw==
   dependencies:
     "@babel/core" "^7.22.5"
     "@fortawesome/fontawesome-free" "^5.15.4"
@@ -5447,7 +5468,7 @@ dm3-react@^0.2.11:
     dm3-lib-delivery-api "^0.2.0"
     dm3-lib-messaging "^0.2.0"
     dm3-lib-offchain-resolver-api "^0.2.4"
-    dm3-lib-profile "^0.2.1"
+    dm3-lib-profile "^0.2.2"
     dm3-lib-shared "^0.2.1"
     dm3-lib-storage "^0.2.0"
     ethereum-blockies-base64 "^1.0.2"
